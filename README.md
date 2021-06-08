@@ -1,3 +1,5 @@
+# JustRollingDevs provides fast, responsive and intuitive Website Development and Design. Also offers website setup and deployment, website's content management, SEO, maintaining and others.
+
 # This Freelancing site have 3 phases development plan: Base, Dashboard and Blogs to implement to achieve it's goal.
 
 This website is built mainly on (untill now):
