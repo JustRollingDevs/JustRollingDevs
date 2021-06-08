@@ -1,0 +1,128 @@
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+  @if length($arg) == 2 {
+    @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+      @content;
+    }
+  }
+}
+
+@mixin clearFix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin not-finished {
+  text-decoration: none;
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+@mixin not-finished-project {
+  .not-finished-project {
+    background-color: #2d3035;
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+}
+
+@mixin sale {
+  .sale {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #f66152;
+    color: #fff;
+    height: 3.5rem;
+    width: 3.5rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3.5rem;
+    transform: rotate(-30deg);
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: inherit;
+      height: inherit;
+      width: inherit;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transform: rotate(30deg);
+    }
+    &:after {
+      transform: rotate(60deg);
+    }
+  }
+}
+
+@mixin checkbox-checked {
+  .contact-checkbox {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mQ($breakpoint-sm) {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+    @include mQ($breakpoint-md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .contact-checkbox li {
+    margin: 0.5rem;
+    @include mQ($breakpoint-sm) {
+      margin: 0.5rem 0;
+    }
+    @include mQ($breakpoint-lg, $breakpoint-md) {
+      margin: 1rem 0;
+    }
+  }
+
+  .contact-checkbox li label {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(139, 139, 139, 0.3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s;
+  }
+
+  .contact-checkbox li label {
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+    @include mQ($breakpoint-sm) {
+      padding: 0.3rem 0.5rem;
+    }
+  }
+  .contact-checkbox li input[type='checkbox']:checked + label {
+    border: 2px solid $color2;
+    background-color: $color2;
+    color: #fff;
+    transition: all 0.2s;
+  }
+
+  .contact-checkbox li input[type='checkbox'] {
+    display: absolute;
+    position: absolute;
+    opacity: 0;
+  }
+}

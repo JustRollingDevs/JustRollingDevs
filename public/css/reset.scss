@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+  scroll-behavior: smooth;
+  height: auto;
+  // overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
