@@ -35,7 +35,7 @@
 @mixin sale {
   .sale {
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 0;
     background: #f66152;
     color: #fff;
@@ -45,6 +45,7 @@
     vertical-align: middle;
     line-height: 3.5rem;
     transform: rotate(-30deg);
+    overflow: visible;
     &:before,
     &:after {
       content: '';
@@ -56,9 +57,11 @@
       left: 0;
       z-index: -1;
       transform: rotate(30deg);
+      overflow: visible;
     }
     &:after {
       transform: rotate(60deg);
+      overflow: visible;
     }
   }
 }
@@ -70,6 +73,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: visible;
     @include mQ($breakpoint-sm) {
       padding: 10px;
       font-size: 0.9rem;
@@ -82,6 +86,7 @@
 
   .contact-checkbox li {
     margin: 0.5rem;
+    overflow: visible;
     @include mQ($breakpoint-sm) {
       margin: 0.5rem 0;
     }
@@ -104,11 +109,13 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     transition: all 0.2s;
+    overflow: visible;
   }
 
   .contact-checkbox li label {
     padding: 0.5rem 0.7rem;
     cursor: pointer;
+    overflow: visible;
     @include mQ($breakpoint-sm) {
       padding: 0.3rem 0.5rem;
     }

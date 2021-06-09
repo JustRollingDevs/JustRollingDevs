@@ -5,8 +5,14 @@
           box-sizing: border-box;
   font-family: "Segoe UI", Helvetica, sans-serif;
   scroll-behavior: smooth;
-  height: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 fieldset,
@@ -22,6 +28,7 @@ li {
   position: relative;
   width: 100%;
   height: 60vh;
+  overflow: visible;
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1920px) {
@@ -37,6 +44,7 @@ li {
   top: 0px;
   background: linear-gradient(135deg, #0e197d 10%, #2376dd 100%);
   z-index: -1;
+  overflow: visible;
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1920px) {
@@ -93,6 +101,7 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: visible;
 }
 
 .container header .nav-link {
@@ -102,6 +111,7 @@ li {
   margin: 0.5em;
   padding: 0.5rem;
   color: #fff;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -129,6 +139,7 @@ li {
   text-decoration: none;
   cursor: not-allowed;
   opacity: 0.3;
+  overflow: visible;
 }
 
 #summary {
@@ -402,17 +413,10 @@ li {
       grid-template-areas: 'visual' 'content';
 }
 
-@media screen and (max-width: 420px) {
-  #about .other-project .project-item {
-    -ms-grid-rows: 55% 45%;
-        grid-template-rows: 55% 45%;
-  }
-}
-
 @media screen and (max-width: 760px) {
   #about .other-project .project-item {
-    -ms-grid-rows: 60% 40%;
-        grid-template-rows: 60% 40%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
   }
 }
 
@@ -428,15 +432,9 @@ li {
   height: 75%;
 }
 
-@media screen and (max-width: 420px) {
-  #about .other-project .project-item .visual img {
-    height: 55%;
-  }
-}
-
 @media screen and (max-width: 760px) {
   #about .other-project .project-item .visual img {
-    height: 60%;
+    height: 50%;
   }
 }
 
@@ -456,6 +454,12 @@ li {
   padding-top: 10px;
 }
 
+@media screen and (max-width: 760px) {
+  #about .other-project .project-item .content p {
+    padding-top: 5px;
+  }
+}
+
 #about .other-project .not-finished-project {
   background-color: #2d3035;
   cursor: not-allowed;
@@ -468,6 +472,7 @@ li {
   padding-top: 1.5rem;
   height: 100vh;
   background: #1f2124;
+  overflow: visible;
 }
 
 @media screen and (max-width: 760px) {
@@ -494,6 +499,7 @@ li {
   margin: 0.8rem auto;
   display: -ms-grid;
   display: grid;
+  overflow: visible;
   grid-gap: 20px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
@@ -518,6 +524,7 @@ li {
   padding: 1.5rem;
   text-align: center;
   color: #fff;
+  overflow: visible;
 }
 
 @media screen and (max-width: 760px) {
@@ -585,7 +592,7 @@ li {
 
 #pricing .avg-details .building .sale {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   background: #f66152;
   color: #fff;
@@ -596,6 +603,7 @@ li {
   line-height: 3.5rem;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
+  overflow: visible;
 }
 
 #pricing .avg-details .building .sale:before, #pricing .avg-details .building .sale:after {
@@ -609,11 +617,13 @@ li {
   z-index: -1;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
+  overflow: visible;
 }
 
 #pricing .avg-details .building .sale:after {
   -webkit-transform: rotate(60deg);
           transform: rotate(60deg);
+  overflow: visible;
 }
 
 #pricing .avg-details .content-manegement {
@@ -657,6 +667,7 @@ li {
   font-weight: bold;
   font-size: 1.1rem;
   background: #d6d6d6;
+  overflow: visible;
 }
 
 #contact h2 {
@@ -689,6 +700,7 @@ li {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 0.5rem;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -731,6 +743,7 @@ li {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 1rem;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -775,6 +788,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  overflow: visible;
 }
 
 #contact .cont-services .contact-checkbox {
@@ -789,6 +803,7 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -809,6 +824,7 @@ li {
 
 #contact .cont-services .contact-checkbox li {
   margin: 0.5rem;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -838,11 +854,13 @@ li {
   -webkit-tap-highlight-color: transparent;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  overflow: visible;
 }
 
 #contact .cont-services .contact-checkbox li label {
   padding: 0.5rem 0.7rem;
   cursor: pointer;
+  overflow: visible;
 }
 
 @media screen and (max-width: 420px) {
@@ -868,6 +886,7 @@ li {
 @media screen and (max-width: 420px) {
   #contact .cont-services {
     display: block;
+    overflow: visible;
   }
 }
 
@@ -893,7 +912,7 @@ li {
   padding: 0 0.5rem;
   position: absolute;
   width: 100%;
-  background: #46474d;
+  background: #1f2124;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
